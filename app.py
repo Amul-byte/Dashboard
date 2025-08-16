@@ -19,7 +19,6 @@ state = st.sidebar.selectbox('Select State',state_list)
 map = st.sidebar.selectbox('Select MapType',map_list)
 # literacy = st.sidebar.selectbox("Literacy",['Literacy Rate'])
 if state:
-    
     if state == 'Overall':
         fig = px.scatter_map(df, lat='lat',
                      lon='lon',
@@ -42,6 +41,7 @@ if state:
         
         
     else:
+        st.write("Hover for Literacy Rate")
         temp_df = df[df['State']==state]
         fig = px.scatter_map(temp_df, lat='lat',
                         lon='lon',
