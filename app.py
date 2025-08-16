@@ -16,15 +16,15 @@ state_list = df['State'].unique().tolist()
 state_list.insert(0,'Overall')
 state = st.sidebar.selectbox('Select State',state_list)
 
-map = st.sidebar.selectbox('Select State',map_list)
+map = st.sidebar.selectbox('Select MapType',map_list)
 if state:
     if state == 'Overall':
         fig = px.scatter_map(df, lat='lat',
                      lon='lon',
-                     text="District", # which column to use to set the color of markers # column added to hover information
+                    #  text="literacy_rate", # which column to use to set the color of markers # column added to hover information
                      size="Population", # size of markers
                      color='State',
-                     hover_name='literacy_rate',
+                     hover_name='District',
                      zoom=3,
                      width=800,
                      height=550,
@@ -33,6 +33,7 @@ if state:
                      ,map_style=map
                      )
         # Zoom to INDIA only not whole has paramster visible which helps!!
+        fig.update_traces(mode='markers+text', textposition='top center')
         fig.update_geos(fitbounds="locations",visible = False)
         st.plotly_chart(fig)
         
@@ -44,7 +45,7 @@ if state:
                         lon='lon',
                         text="District", # which column to use to set the color of markers # column added to hover information
                         size="Population", # size of markers
-                        color='State',
+                        color='District',
                         hover_name='literacy_rate',
                         zoom=3,
                         width=800,
@@ -53,6 +54,6 @@ if state:
                                 'lon':79}
                         ,map_style=map
                         )
-    # Zoom to INDIA only not whole has paramster visible which helps!!
+    # Zoom to INDIA only not whole has paramster visible which helps!
         fig.update_geos(fitbounds="locations",visible = False)
         st.plotly_chart(fig)
