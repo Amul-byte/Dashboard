@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly.graph_objects as go 
 import nbformat
 
-df = pd.read_csv('/Users/amulpoudel/Developer/Dashboard/Data.csv')
+df = pd.read_csv('Data.csv')
 df = df.rename(columns={"Latitude": "lat", "Longitude": "lon"})
 map_list=['basic', 'carto-darkmatter', 'carto-darkmatter-nolabels', 'carto-positron', 'carto-positron-nolabels', 'carto-voyager', 'carto-voyager-nolabels', 'dark', 'light', 'open-street-map', 'outdoors', 'satellite', 'satellite-streets', 'streets', 'white-bg']
 st.title("Dashboard for Indian Census")
