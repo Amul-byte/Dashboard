@@ -17,7 +17,9 @@ state_list.insert(0,'Overall')
 state = st.sidebar.selectbox('Select State',state_list)
 
 map = st.sidebar.selectbox('Select MapType',map_list)
+# literacy = st.sidebar.selectbox("Literacy",['Literacy Rate'])
 if state:
+    
     if state == 'Overall':
         fig = px.scatter_map(df, lat='lat',
                      lon='lon',
@@ -57,3 +59,4 @@ if state:
     # Zoom to INDIA only not whole has paramster visible which helps!
         fig.update_geos(fitbounds="locations",visible = False)
         st.plotly_chart(fig)
+        
