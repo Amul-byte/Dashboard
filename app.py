@@ -60,3 +60,9 @@ if state:
         fig.update_geos(fitbounds="locations",visible = False)
         st.plotly_chart(fig)
         
+query_params = st.query_params
+
+# Hidden ping-pong endpoint
+if "ping" in query_params:
+    st.write(".")
+    st.stop()
