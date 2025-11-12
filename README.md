@@ -39,7 +39,3 @@ repository.
 - Edit `app.py` to modify the main application logic.
 - Use `notebooks.ipynb` for data exploration and prototyping.
 - Update `requirements.txt` after installing new packages.
-
----
-
-Feel free to contribute or open issues for improvements!
